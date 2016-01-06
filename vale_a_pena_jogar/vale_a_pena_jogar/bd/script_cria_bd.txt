@@ -1,0 +1,4 @@
+create loja_games;
+
+-- necessario modificar a sequence "hibernate_sequence"
+insert into hibernate_sequence (next_val) values (1);
