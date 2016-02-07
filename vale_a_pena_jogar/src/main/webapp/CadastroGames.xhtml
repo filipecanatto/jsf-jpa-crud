@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+	<fieldset>
+		<LEGEND>Cadastro de Games</LEGEND>
+		<h:form>
+			<h:panelGrid columns="2">
+Titulo: <h:inputText value="#{gamesManagedBean.game.titulo}" />
+				<br />
+Ano de Fabricação: <h:inputText
+					value="#{gamesManagedBean.game.anoFabricacao}" />
+				<br />
+Desenvolvedora: <h:inputText
+					value="#{gamesManagedBean.game.desenvolvedora}" />
+				<br />
+Publicadora: <h:inputTextarea
+					value="#{gamesManagedBean.game.publicadora}" />
+				<br />
+Genero: <h:selectOneMenu value="#{gamesManagedBean.genero_val}" >
+					<f:selectItem itemLabel="--Selecione--" noSelectOption="true" />
+					<f:selectItems value="#{gamesManagedBean.genero}"
+						itemValue="#{genero.genero}" itemLabel="#{genero.genero}" var="genero" />
+				</h:selectOneMenu>
+			</h:panelGrid>
+			<h:commandButton value="Salvar"
+				action="#{gamesManagedBean.SalvaBD(gamesManagedBean.game)}" />
+		</h:form>
+	</fieldset>
+</h:body>
+</html>
